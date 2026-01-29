@@ -48,18 +48,6 @@ services:
     networks:
       - backend
 
-  proxy:
-    build:
-      context: ./proxy
-      args:
-        APP_HOST: web
-    image: openproject/proxy
-    <<: *restart_policy
-    depends_on:
-      - web
-    networks:
-      - frontend
-
   web:
     <<: *app
     command: "./docker/prod/web"
