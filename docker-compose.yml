@@ -56,7 +56,7 @@ services:
     image: openproject/proxy
     <<: *restart_policy
     ports:
-      - "${PORT:-8080}:80"
+      - "${PORT:-8500}:80"
     depends_on:
       - web
     networks:
